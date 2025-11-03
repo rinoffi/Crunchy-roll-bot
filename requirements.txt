@@ -1,2 +1,7 @@
-python-telegram-bot==20.7
-yt-dlp==2024.10.7
+pyrogram==2.0.106
+tgcrypto
+yt-dlp==2025.1.1
+requests
+urllib3
+aiohttp
+pytz
