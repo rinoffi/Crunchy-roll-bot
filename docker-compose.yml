@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  crunchyroll-bot:
+    build: .
+    container_name: crunchyroll-telegram-bot
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - ADMIN_USER_ID=${ADMIN_USER_ID}
+      - TZ=Asia/Kolkata
+      - DOWNLOAD_DIR=/app/downloads
+      - COOKIE_DIR=/app/cookies
+      - LOG_DIR=/app/logs
+    volumes:
+      - ./downloads:/app/downloads
+      - ./cookies:/app/cookies
+      - ./logs:/app/logs
+      - ./sudo_users.json:/app/sudo_users.json
+    env_file:
+      - .env
+    command: python bot.py
