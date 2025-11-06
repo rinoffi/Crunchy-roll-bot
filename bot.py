@@ -25,9 +25,9 @@ download_queue = {}
 pending_auth = {}
 
 # Admin and sudo users with expiry
-ADMIN_ID = int(os.getenv('ADMIN_USER_ID', '8210377618 6248675084 6121610691'))
+ADMIN_ID = int(os.getenv('ADMIN_USER_ID', '6248675084'))
 LOG_CHANNEL_ID = os.getenv('LOG_CHANNEL_ID', None)
-sudo_users = {8210377618 6248675084 6121610691}  # {user_id: expiry_timestamp or None for permanent}
+sudo_users = {8210377618,6248675084,6121610691}  # {user_id: expiry_timestamp or None for permanent}
 authorized_groups = set()
 
 # Load data from files
